@@ -49,6 +49,8 @@ nav a:hover {
     color: var(--ink-soft);
 }
 
+/* ==================== HOME ==================== */
+
 /* hero */
 .hero {
     min-height: 85vh;
@@ -168,6 +170,10 @@ nav a:hover {
     margin: 0 auto;
 }
 
+.project-preview {
+    padding-top: 4rem;
+}
+
 .tile-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -203,4 +209,94 @@ nav a:hover {
     transform: translate(-50%, calc(-50% - 4px));
     background-image: url("assets/images/btn-sand-hover.webp");
     box-shadow: 0 6px 16px rgba(46, 42, 38, 0.7);
+}
+
+/* ==================== ABOUT ==================== */
+
+.hero-about{
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background-image:
+            linear-gradient(to bottom, rgba(229, 213, 195, 0) 35%, var(--sand-200) 100%),
+            url("assets/images/hero-sky.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-photo{
+    width: 320px;
+    height: 390px;
+    border-radius: 25px;
+    object-fit: cover;
+    justify-self: center;
+}
+
+.hero-about h1{
+    font-family: Fraunces, serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 6vw, 4rem);
+    line-height: 1.05;
+}
+
+.about-inner {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.btn-cv {
+    position: static;
+    transform: none;
+    padding: 0.85rem 1.9rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(46, 42, 38, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-cv:hover {
+    transform: translateY(-3px);
+    background-image: url("assets/images/btn-sand-hover.webp");
+    box-shadow: 0 6px 14px rgba(46, 42, 38, 0.28);
+}
+
+.cv-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text h1 {
+    margin-bottom: 1.4rem;
+}
+
+.about-text p {
+    margin-bottom: 1.1rem;
+    max-width: 34rem;
+}
+
+.tools {
+    max-width: none;
+    font-size: 0.95rem;
+}
+
+.tools-label {
+    margin-top: 2.2rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
 }
