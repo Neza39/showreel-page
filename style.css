@@ -300,3 +300,125 @@ nav a:hover {
     text-transform: uppercase;
     color: var(--ink-soft);
 }
+
+/* ==================== CONTACT ==================== */
+
+.contact {
+    padding: 0rem 2rem 8rem;
+    margin: 2rem;
+    margin-top: -3rem;
+}
+
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 3.5rem;
+    background-color: var(--sand-100);
+    border-radius: 28px;
+    box-shadow: 0 8px 28px rgba(46, 42, 38, 0.12);
+}
+
+.contact-intro {
+    text-align: center;
+}
+
+.envelope {
+    width: 200px;
+    border-radius: 20px;
+    margin-bottom: 1.6rem;
+}
+
+.contact-intro h2 {
+    font-family: Fraunces, serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+
+.invite {
+    color: var(--ink-soft);
+    margin-top: 0.8rem;
+}
+
+.contact-mail {
+    display: inline-block;
+    margin-top: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sand-300);
+}
+
+.contact-mail:hover {
+    color: var(--ink-soft);
+}
+
+.contact-intro .socials {
+    justify-content: center;
+    margin-top: 1.6rem;
+    margin-bottom: 0;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem;
+    background-color: var(--sand-50);
+    border-radius: 20px;
+}
+
+.contact-card input,
+.contact-card textarea {
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    color: var(--ink);
+    padding: 0.9rem 1.1rem;
+    background-color: #fffdfa;
+    border: 2px solid var(--sand-300);
+    border-radius: 12px;
+    resize: vertical;
+}
+
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+    color: #a39990;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.btn-send {
+    position: static;
+    transform: none;
+    align-self: center;
+    margin-top: 0.6rem;
+    padding: 0.85rem 2.4rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: Inter, sans-serif;
+    box-shadow: 0 2px 6px rgba(46, 42, 38, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-send:hover {
+    transform: translateY(-3px);
+    background-image: url("assets/images/btn-sand-hover.webp");
+    box-shadow: 0 6px 14px rgba(46, 42, 38, 0.28);
+}
+
+@media (max-width: 800px) {
+    .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2.5rem 1.8rem;
+    }
+}

@@ -23,33 +23,63 @@
         </nav>
     </header>
 
-<section class="hero-about">
+    <section class="hero-about">
 
-    <div class="about-inner">
+        <div class="about-inner">
 
-        <div class="about-text">
-            <h1>About Me</h1>
+            <div class="about-text">
+                <h1>About Me</h1>
 
-            <p>I'm a Multimedia Design student in Køge, working with visual identity, illustration and web design.</p>
+                <p>I'm a Multimedia Design student in Køge, working with visual identity, illustration and web design.</p>
 
-            <p>I think of design as problem solving. What does this need to do, and who is it for. I'm good at finding ideas and creative in how I make them, so I can take a project all the way to something finished.</p>
+                 <p>I think of design as problem solving. What does this need to do, and who is it for. I'm good at finding ideas and creative in how I make them, so I can take a project all the way to something finished.</p>
 
-            <h2 class="tools-label">What I work with</h2>
-            <p class="tools">Figma · Illustrator · Photoshop · After Effects · Procreate · HTML, CSS &amp; JS</p>
+                <h2 class="tools-label">What I work with</h2>
+                <p class="tools">Figma · Illustrator · Photoshop · After Effects · Procreate · HTML, CSS &amp; JS</p>
 
-            <div class="cv-buttons">
-                <a href="assets/cv-neza-noriega-ibsen-en.pdf" class="btn btn-cv" download>CV English</a>
-                <a href="assets/cv-neza-noriega-ibsen-dk.pdf" class="btn btn-cv" download>CV Dansk</a>
+                <div class="cv-buttons">
+                    <a href="assets/cv-neza-noriega-ibsen-en.pdf" class="btn btn-cv" download>CV English</a>
+                    <a href="assets/cv-neza-noriega-ibsen-dk.pdf" class="btn btn-cv" download>CV Dansk</a>
+                </div>
             </div>
+
+            <img src="assets/images/profile-photo.webp" alt="Neza Noriega Ibsen" class="profile-photo">
+
         </div>
 
-        <img src="assets/images/profile-photo.webp" alt="Neza Noriega Ibsen" class="profile-photo">
+    </section>
 
-    </div>
+    <section class="contact">
+        <div class="contact-inner">
 
-</section>
+            <div class="contact-intro">
+                <img src="assets/images/envelope.webp" alt="" class="envelope">
+                <h2>Let's connect</h2>
+                <p class="invite">Got a project, a question, or just want to say hi?</p>
+                <a href="mailto:neza.noriega.ibsen@gmail.com" class="contact-mail">neza.noriega.ibsen@gmail.com</a>
+                <div class="socials">
+                <a href="mailto:neza.noriega.ibsen@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/neza-noriega-ibsen-41861742b/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-square-linkedin"></i></a>
+                <a href="https://github.com/Neza39" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
 
+            <form class="contact-card" action="https://api.web3forms.com/submit" method="POST">
 
+                <input type="hidden" name="access_key" value="8f7b485b-300d-4351-8906-a2b8566c34e4">
+                <input type="hidden" name="subject" value="New message from your portfolio">
+                <input type="checkbox" name="botcheck" style="display:none">
+
+                <input type="email" name="email" aria-label="Your email" placeholder="your@email.com" required>
+
+                <textarea name="message" rows="6" aria-label="Your message" placeholder="Your message…" required></textarea>
+
+                <button type="submit" class="btn btn-send">Send</button>
+
+            </form>
+
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
