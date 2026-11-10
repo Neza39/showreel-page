@@ -19,6 +19,36 @@ body {
     color: var(--ink);
     background-color: var(--sand-200);
     line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+/* headings */
+h1 {
+    font-family: Fraunces, serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 6vw, 4rem);
+    line-height: 1.05;
+}
+
+h2 {
+    font-family: Fraunces, serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+
+h3 {
+    font-family: Fraunces, serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+}
+
+.tagline {
+    font-size: 1.15rem;
+    max-width: 34rem;
+    margin-top: 1.2rem;
 }
 
 /* nav */
@@ -86,16 +116,7 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-family: Fraunces, serif;
-    font-weight: 600;
     font-size: clamp(2.8rem, 7vw, 4.6rem);
-    line-height: 1.05;
-}
-
-.tagline {
-    font-size: 1.15rem;
-    max-width: 34rem;
-    margin-top: 1.2rem;
 }
 
 .meta {
@@ -172,6 +193,7 @@ nav a:hover {
 
 .project-preview {
     padding-top: 4rem;
+    margin-bottom: 6rem;
 }
 
 .tile-grid {
@@ -218,7 +240,6 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
     padding: 2rem;
     background-image:
@@ -233,14 +254,7 @@ nav a:hover {
     height: 390px;
     border-radius: 25px;
     object-fit: cover;
-    justify-self: center;
-}
-
-.hero-about h1{
-    font-family: Fraunces, serif;
-    font-weight: 600;
-    font-size: clamp(1.5rem, 6vw, 4rem);
-    line-height: 1.05;
+    justify-self: end;
 }
 
 .about-inner {
@@ -250,6 +264,7 @@ nav a:hover {
     gap: 4rem;
     max-width: 1100px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .btn-cv {
@@ -333,13 +348,6 @@ nav a:hover {
     margin-bottom: 1.6rem;
 }
 
-.contact-intro h2 {
-    font-family: Fraunces, serif;
-    font-weight: 600;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-}
-
 .invite {
     color: var(--ink-soft);
     margin-top: 0.8rem;
@@ -415,10 +423,453 @@ nav a:hover {
     box-shadow: 0 6px 14px rgba(46, 42, 38, 0.28);
 }
 
+/* ==================== PROJECTS ==================== */
+
+.hero-projects {
+    max-width: calc(1100px + 4rem);
+    margin: 0 auto;
+    padding: 11rem 2rem 3rem;
+}
+
+.project-cards {
+    max-width: calc(1100px + 4rem);
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0;
+    background-color: var(--sand-100);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--ink);
+    box-shadow: 0 2px 6px rgba(46, 42, 38, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(46, 42, 38, 0.15);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border-radius: 0;
+}
+
+.card-text{
+    padding: 2rem;
+}
+
+.card p {
+    color: var(--ink-soft);
+}
+
+
+
+/* ==================== PROJECT PAGE ==================== */
+
+.project-head {
+    max-width: calc(1100px + 4rem);
+    margin: 0 auto;
+    padding: 11rem 2rem 2.5rem;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 1.6rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.back:hover {
+    color: var(--ink);
+}
+
+.role {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+/* full-bleed media that dissolves into the background at both ends */
+.project-video video,
+.project-video img {
+    width: 100%;
+    display: block;
+    --fade: linear-gradient(to bottom,
+        rgba(0,0,0,0)   0%,
+        rgba(0,0,0,.06) 6%,
+        rgba(0,0,0,.22) 12%,
+        rgba(0,0,0,.5)  18%,
+        rgba(0,0,0,.78) 24%,
+        rgba(0,0,0,.94) 30%,
+        rgba(0,0,0,1)   36%,
+        rgba(0,0,0,1)   58%,
+        rgba(0,0,0,.94) 65%,
+        rgba(0,0,0,.78) 72%,
+        rgba(0,0,0,.5)  80%,
+        rgba(0,0,0,.22) 88%,
+        rgba(0,0,0,.06) 95%,
+        rgba(0,0,0,0)   100%);
+    -webkit-mask-image: var(--fade);
+            mask-image: var(--fade);
+}
+
+.project-block {
+    max-width: calc(1100px + 4rem);
+    margin: 0 auto;
+    padding: 4.5rem 2rem 0;
+}
+
+.project-block p {
+    max-width: 34rem;
+    margin-top: 0.8rem;
+}
+
+/* the video fades out before its box ends, so the first block needs extra air */
+.project-video + .project-block {
+    padding-top: 7rem;
+}
+
+/* ---- reusable pieces ---- */
+
+.shot {
+    margin-top: 2rem;
+    background-color: var(--sand-50);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(46, 42, 38, 0.08);
+}
+
+.shot img,
+.shot video {
+    width: 100%;
+    display: block;
+}
+
+/* media on one side, text on the other */
+.media-text {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: center;
+}
+
+/* two cards side by side; minmax(0,1fr) stops a wide image
+   from setting the column's minimum width */
+.card-pair {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* the pattern tiled live, so the repeat is visible rather than described */
+.pattern-band {
+    margin-top: 2rem;
+    height: 440px;
+    border-radius: 16px;
+    background-image: url("assets/images/green-haven-pattern.webp");
+    background-size: 560px;
+    background-repeat: repeat;
+    box-shadow: 0 2px 8px rgba(46, 42, 38, 0.08);
+}
+
+/* three cards in a row */
+.card-trio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* a card above, swatches below, filling the same height as the neighbour */
+.card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 0;
+}
+
+.shot-half {
+    max-width: 520px;
+}
+
+.media-text .shot,
+.card-pair .shot,
+.card-trio .shot,
+.card-stack .shot {
+    margin-top: 0;
+}
+
+/* ---- colour swatches ---- */
+
+.swatches {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 2rem;
+}
+
+.card-stack .swatches,
+.card-pair > .swatches {
+    flex: 1;
+    margin-top: 0;
+}
+
+.swatch {
+    flex: 1;
+    min-width: 0;          /* lets the hex label shrink instead of forcing a wrap */
+    display: flex;
+    flex-direction: column;
+}
+
+.swatch span {
+    flex: 1;
+    min-height: 90px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(46, 42, 38, 0.1);
+}
+
+.swatch small {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+}
+
+/* ---- end of a project page ---- */
+
+.project-outro {
+    max-width: calc(1100px + 4rem);
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+    text-align: center;
+}
+
+/* .btn is positioned absolutely for the video overlay, so undo that here */
+.btn-live {
+    position: static;
+    transform: none;
+    display: inline-block;
+    padding: 1rem 2.6rem;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px rgba(46, 42, 38, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-live:hover {
+    transform: translateY(-3px);
+    background-image: url("assets/images/btn-sand-hover.webp");
+    box-shadow: 0 6px 14px rgba(46, 42, 38, 0.28);
+}
+
+.next-project {
+    margin-top: 2.6rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+}
+
+.next-project a {
+    color: var(--ink);
+}
+
+
+/* ==================== RESPONSIVE ==================== */
+
+/* tablet: anything that is two columns of content becomes one */
+@media (max-width: 900px) {
+    .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .profile-photo {
+        justify-self: start;
+    }
+
+    .tile-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 800px) {
     .contact-inner {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         padding: 2.5rem 1.8rem;
     }
+
+    .media-text {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .card-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .card-trio {
+        grid-template-columns: 1fr;
+    }
+
+    .pattern-band {
+        height: 300px;
+        background-size: 320px;
+    }
+
+    /* project cards stack the image above the text */
+    .card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+/* phone: tighten the side gutters and let the swatches wrap */
+@media (max-width: 620px) {
+    nav {
+        gap: 1.8rem;
+        padding: 1.1rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .hero,
+    .hero-about {
+        padding: 1.5rem;
+    }
+
+    .hero-projects,
+    .project-head,
+    .project-block,
+    .project-outro,
+    .project-cards {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .hero-projects,
+    .project-head {
+        padding-top: 7.5rem;
+    }
+
+    .project-block {
+        padding-top: 3rem;
+    }
+
+    .project-video + .project-block {
+        padding-top: 3.5rem;
+    }
+
+    .swatches {
+        flex-wrap: wrap;
+    }
+
+    .swatch {
+        flex: 1 1 28%;
+    }
+
+    .swatch span {
+        min-height: 64px;
+    }
+}
+
+/* respect the system setting for people who get motion sick */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ==================== FOOTER ==================== */
+
+footer {
+    border-top: 1px solid var(--sand-300);
+    margin-top: 2rem;
+    padding: 2.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: calc(1100px + 4rem);
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.6rem;
+}
+
+.footer-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--ink);
+}
+
+/* the mark is a bitmap, the lettering is traced vector, so they are
+   two images stacked rather than one flattened picture */
+.logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 2.5rem;
+    aspect-ratio: 1200 / 936;
+}
+
+/* .shot img sets width:100%, so these need the extra class to win */
+.logo-card .logo-mark {
+    width: 46%;
+}
+
+.logo-card .logo-word {
+    width: 66%;
+}
+
+/* a paragraph that runs the full column, matching the heading above it */
+.project-block.wide-text p {
+    max-width: none;
+}
+
+/* small icons sitting beside their text, rather than three big panels */
+.icon-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-self: center;
+}
+
+.icon-row .shot {
+    margin-top: 0;
 }

@@ -8,7 +8,10 @@ window.addEventListener('scroll', () => {
 const video = document.querySelector('#showreel-video');
 const overlay = document.querySelector('#video-overlay');
 
-overlay.addEventListener('click', () => {
-    overlay.classList.add('hidden');
-    video.play();
-});
+// the showreel only exists on the home page
+if (overlay) {
+    overlay.addEventListener('click', () => {
+        overlay.classList.add('hidden');
+        video.play();
+    });
+}
