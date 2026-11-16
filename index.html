@@ -20,7 +20,7 @@
 
     <header>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="/">Home</a>
             <a href="projects.html">Projects</a>
             <a href="about.html">About</a>
         </nav>
@@ -42,8 +42,9 @@
 
     <section class="showreel">
         <div class="video-wrap">
-            <video id="showreel-video" controls>
-                <source src="assets/video/veron-hero.mp4" type="video/mp4">
+            <video id="showreel-video" controls preload="metadata"
+                   poster="assets/images/showreel-poster.webp">
+                <source src="assets/video/showreel.mp4" type="video/mp4">
             </video>
             <button class="video-overlay" id="video-overlay">
                 <i class="fa-solid fa-play"></i>

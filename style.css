@@ -89,7 +89,8 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    /* the top padding clears the fixed nav, so the content can never slide under it */
+    padding: 7rem 2rem 2rem;
     background-image:
             linear-gradient(to bottom, rgba(229, 213, 195, 0) 35%, var(--sand-200) 100%),
             url("assets/images/hero-sky.webp");
@@ -218,18 +219,29 @@ nav a:hover {
     padding: 1.25rem 3.2rem;
     font-size: 1.15rem;
     background-image: url("assets/images/btn-sand.webp");
-    background-size: 187px auto;
+    background-size: 175px auto;
     background-repeat: repeat;
     color: var(--ink);
     text-decoration: none;
     border-radius: 999px;
     box-shadow: 0 2px 8px rgba(46, 42, 38, 0.7);
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* One hover state for every button: the same sand, darkened by a flat colour
+   layer stacked on top of it, and the label switches to cream so it stays
+   readable. Two background layers, no second image file. */
+.btn:hover,
+.btn:focus-visible,
+.preview-link:hover .btn {
+    background-image:
+            linear-gradient(rgba(46, 42, 38, 0.45), rgba(46, 42, 38, 0.45)),
+            url("assets/images/btn-sand.webp");
+    color: var(--sand-50);
 }
 
 .preview-link:hover .btn {
     transform: translate(-50%, calc(-50% - 4px));
-    background-image: url("assets/images/btn-sand-hover.webp");
     box-shadow: 0 6px 16px rgba(46, 42, 38, 0.7);
 }
 
@@ -241,7 +253,8 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 2rem;
+    /* the top padding clears the fixed nav, so the content can never slide under it */
+    padding: 7rem 2rem 2rem;
     background-image:
             linear-gradient(to bottom, rgba(229, 213, 195, 0) 35%, var(--sand-200) 100%),
             url("assets/images/hero-sky.webp");
@@ -278,7 +291,6 @@ nav a:hover {
 
 .btn-cv:hover {
     transform: translateY(-3px);
-    background-image: url("assets/images/btn-sand-hover.webp");
     box-shadow: 0 6px 14px rgba(46, 42, 38, 0.28);
 }
 
@@ -419,7 +431,6 @@ nav a:hover {
 
 .btn-send:hover {
     transform: translateY(-3px);
-    background-image: url("assets/images/btn-sand-hover.webp");
     box-shadow: 0 6px 14px rgba(46, 42, 38, 0.28);
 }
 
@@ -673,7 +684,6 @@ nav a:hover {
 
 .btn-live:hover {
     transform: translateY(-3px);
-    background-image: url("assets/images/btn-sand-hover.webp");
     box-shadow: 0 6px 14px rgba(46, 42, 38, 0.28);
 }
 
@@ -755,7 +765,7 @@ nav a:hover {
 
     .hero,
     .hero-about {
-        padding: 1.5rem;
+        padding: 7.5rem 1.5rem 1.5rem;
     }
 
     .hero-projects,
